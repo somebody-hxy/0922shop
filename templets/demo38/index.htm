@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link type="text/css" media="screen" href="/skin/css/style.css" rel="stylesheet">
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="author" content="order by dede58.com" />
+<link rel="shortcut icon" href="/favicon.ico">
+<script type="text/javascript" src="/skin/js/jquery-1.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.js"></script>
+<script type="text/javascript" src="/skin/js/stickup.js"></script>
+<script type="text/javascript" src="/skin/js/xiuzhanwang.js"></script>
+<script type="text/javascript" src="/skin/js/wow.js"></script>
+<script type="text/javascript">new WOW().init();</script>
+<script type="text/javascript" src="/skin/js/html5.js"></script>
+<script type="text/javascript" src="/skin/js/jquery_003.js"></script>
+<script type="text/javascript" src="/skin/js/jquery-migrate.js"></script>
+</head>
+<body class="custom-background">
+{dede:include filename="head.htm"/}
+<div id="sliderbox">
+  <div id="slidebanner">
+    <div class="banner-shadow"></div>
+    <div style="max-width: 100%;" class="bx-wrapper">
+      <div class="bx-viewport">
+        <ul style="width: auto; position: relative;" id="slideshow">
+          <li style="float: none; list-style: outside none none; position: absolute; width: 1200px; z-index: 0; display: none;"><a><img src="/skin/images/banner01.jpg" alt="{dede:global.cfg_webname/}"></a></li>
+          <li style="float: none; list-style: outside none none; position: absolute; width: 1200px; z-index: 0; display: none;"><a><img src="/skin/images/banner02.jpg" alt="{dede:global.cfg_webname/}"></a></li>
+          <li style="float: none; list-style: outside none none; position: absolute; width: 1200px; z-index: 0; display: none;"><a><img src="/skin/images/banner03.jpg" alt="{dede:global.cfg_webname/}"></a></li>
+          <li style="float: none; list-style: outside none none; position: absolute; width: 1200px; z-index: 0; display: none;"><a><img src="/skin/images/banner04.jpg" alt="{dede:global.cfg_webname/}"></a></li>
+        </ul>
+      </div>
+      <div class="bx-controls bx-has-pager bx-has-controls-direction">
+        <div class="bx-pager bx-default-pager"> </div>
+        <div class="bx-controls-direction"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="inner container">
+  <section class="row-fluid radius features fadein">
+    <div class="col-text">
+      <p><img style="float: left; padding: 0 10px 0 0;" src="/skin/images/about.jpg"> {dede:sql sql='Select content from dede_arctype where id=2'} 
+        [field:content  function='cn_substr(html2text(@me),1000)'/]...
+        {/dede:sql}</p>
+    </div>
+    <div class="btn-view">{dede:type typeid='2'} <a href="[field:typelink/]" class="radius fadein">查看更多</a>{/dede:type} </div>
+  </section>
+  <section class="row-fluid news">
+    <section class="row-fluid pic-fluid inner">
+      <h2> 产品中心 <span>{dede:type typeid='10'} <a href="[field:typelink/]" title="更多">更多&gt;&gt;</a>{/dede:type} </span></h2>
+      <ul class="piclist piclist-col4">
+        {dede:arclist typeid='10' row=8 titlelen=32}
+        <li> <a href="[field:arcurl/]" title="[field:title/]">
+          <div style="visibility: visible;" class="folio-thumb fadeInLeft wow animated">
+            <div class="mediaholder"><img src="[field:picname/]" alt="[field:title/]" class="thumb"/></div>
+            <div class="opacity-pic"></div>
+          </div>
+          <h3>[field:title/]</h3>
+          </a></li>
+        {/dede:arclist}
+      </ul>
+    </section>
+    <div class="column-fluid">
+      <div class="content">
+        <div class="col-box">
+          <h2> 活动公告 <span>{dede:type typeid='7'} <a href="[field:typelink/]" title="更多">更多&gt;&gt;</a>{/dede:type} </span></h2>
+          <div id="news-slider">
+            <div style="max-width: 100%;" class="bx-wrapper">
+              <div style="width: 100%; overflow: hidden; position: relative; height: 360px;" class="bx-viewport">
+                <ul style="width: 515%; position: relative; transition-duration: 0s; transform: translate3d(-900px, 0px, 0px);">
+                  {dede:arclist typeid='7' titlelen=50 limit='0,3' type='image.'}
+                  <li style="float: left; list-style: outside none none; position: relative; width: 300px;"><a href="[field:arcurl/]" title="[field:title/]"><img src="[field:picname/]" alt="[field:title/]" title="[field:title/]" class="thumb"></a>
+                    <div class="bx-caption"><span>[field:title/]</span></div>
+                  </li>
+                  {/dede:arclist}
+                </ul>
+              </div>
+              <div class="bx-controls bx-has-pager bx-has-controls-direction">
+                <div class="bx-pager bx-default-pager">
+                  <div class="bx-pager-item"> </div>
+                </div>
+                <div class="bx-controls-direction"> </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-box-list">
+            <ul>
+              {dede:arclist typeid='7' limit='3,13' titlelen=50}
+              <li><span>[field:pubdate function="MyDate('Y-m-d',@me)"/]</span><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></li>
+              {/dede:arclist}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="homebar">
+      <h2> 行业新闻 <span>{dede:type typeid='9'} <a href="[field:typelink/]" title="更多">更多&gt;&gt;</a>{/dede:type} </span></h2>
+      <ul>
+        {dede:arclist typeid='9' row=12 titlelen=50}
+        <li><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </section>
+  <div class="friendlink inner">
+    <ul>
+      <li class="fltitle">友情链接：</li>
+      {dede:flink titlelen='20' row='20' type='text'}
+      <li>[field:link /] </li>
+      {/dede:flink}
+    </ul>
+  </div>
+</div>
+﻿{dede:include filename="footer.htm"/}
+</body>
+</html>

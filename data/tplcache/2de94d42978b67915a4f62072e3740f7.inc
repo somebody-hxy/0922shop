@@ -1,0 +1,1 @@
+<a href="[field:typelink/]" class="radius fadein">查看更多</a>

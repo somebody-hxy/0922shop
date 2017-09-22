@@ -1,0 +1,1 @@
+<a href="[field:typelink/]" title="更多">更多&gt;&gt;</a>

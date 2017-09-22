@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link type="text/css" media="screen" href="/skin/css/style.css" rel="stylesheet">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="shortcut icon" href="/favicon.ico">
+<script type="text/javascript" src="/skin/js/jquery-1.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.js"></script>
+<script type="text/javascript" src="/skin/js/stickup.js"></script>
+<script type="text/javascript" src="/skin/js/xiuzhanwang.js"></script>
+<script type="text/javascript" src="/skin/js/wow.js"></script>
+<script type="text/javascript">new WOW().init();</script>
+<script type="text/javascript" src="/skin/js/html5.js"></script>
+<script type="text/javascript" src="/skin/js/jquery_003.js"></script>
+<script type="text/javascript" src="/skin/js/jquery-migrate.js"></script>
+</head>
+<body class="custom-background">
+{dede:include filename="head.htm"/}
+<div class="banner inner">
+  <div class="banner-shadow"> </div>
+  <img src="/skin/images/hf.jpg" alt="我的网站"></div>
+<div class="breadcrumb inner">
+  <div class="crumb-box">
+    <div itemscope itemtype="/" id="crumbs">当前位置： {dede:field name='position'/}</span></div>
+  </div>
+</div>
+<div class="inner container">
+  <div class="column-fluid">
+    <div class="content">
+      <h2 class="cur-title">{dede:field name='typeid' function="GetTopTypename(@me)"/}</h2>
+      <ul class="postlist">
+        {dede:list pagesize ='10'}
+        <li><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a><span>[field:pubdate function="MyDate('Y-m-d',@me)"/]</span></li>
+        {/dede:list}
+      </ul>
+      <div class="clearfix"></div>
+      <div class="wpagenavi">
+        <div class="page">
+          <ul>
+            {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  {dede:include filename="left.htm"/}
+  <div class="clearfix"></div>
+</div>
+﻿﻿﻿{dede:include filename="footer.htm"/}
+</body>
+</html>

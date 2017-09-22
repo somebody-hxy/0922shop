@@ -1,0 +1,22 @@
+<aside class="sidebar">
+  <ul>
+    <li>
+      <h3><span>新闻中心</span></h3>
+      <ul>
+        {dede:arclist typeid='6' row=10 titlelen=50}
+        <li><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></li>
+        {/dede:arclist}
+      </ul>
+    </li>
+    <li>
+      <h3>联系方式</h3>
+      <div><img src="/skin/images/contact-us.jpg" alt="联系我们" title="联系我们" width="228"> 
+        电话号码：{dede:global.mobile/}<br>
+        传真号码：{dede:global.fax/} <br>
+        客服Q Q：{dede:global.qq/}  <br>
+        联系邮箱：{dede:global.eamil/} <br>
+        联系地址：{dede:global.address/} <br>
+      </div>
+    </li>
+  </ul>
+</aside>
